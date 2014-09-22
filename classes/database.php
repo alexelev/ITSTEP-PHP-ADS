@@ -13,6 +13,7 @@
 			return ((mysql_query($query) != false) ? true : false);
 		}
 
+        //для получения значения по ключу
 		static public function getValue($query)
 		{
 			$result = mysql_query($query);
@@ -21,17 +22,19 @@
 			}
 		}
 
+        //для получения записи из БД
 		static public function getRow($query)
 		{
 			$result = mysql_query($query);
 			return mysql_fetch_assoc($result);
 		}
 
+        //для получения выборки из БД
 		static public function getTable($query, $index = null)
 		{
 			$result = mysql_query($query);
 			$array = array();
-			while($row = mysql_fetch_assoc($result){
+			while($row = mysql_fetch_assoc($result)){
 				if($index){
 					$array[$row[$index]] = $row;
 				} else {

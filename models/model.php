@@ -6,6 +6,7 @@
 		private $id;
 		private $fields = array();
 
+        //для заполнения массива данными из базы по id
 		public function __construct($id = null)
 		{
 			if ($id) {
@@ -21,6 +22,7 @@
 			}
 		}
 
+        //для извлечения значения по ключу из массива
 		private function __get($field)
 		{
 			if (array_key_exists($field, $this->fields)) {
@@ -29,11 +31,13 @@
 			return null;
 		}
 
+        //для записи значения по ключу
 		private function __set($field, $value)
 		{
 			$this->fields[$field] = $value;
 		}
 
+        //служебная, для обновления записи по всем полям
 		private function update()
 		{
 			$query = "UPDATE '{$this->table}' SET ";
@@ -46,6 +50,7 @@
 			Database::query($query);
 		}
 
+        //служебная, для вставки записи по всем полям
 		private function insert()
 		{
 			$query = "INSERT INTO '{$this->table}' (";
@@ -55,6 +60,7 @@
 			Database::query($query);
 		}
 
+        //для внесения записи в БД
 		public function save()
 		{
 			if ($this->id) {
