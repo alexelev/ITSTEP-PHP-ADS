@@ -1,8 +1,6 @@
 <?php
-
-	//общеупотребимые константы
-	define('DB_HOST', 'localhost');
-	define('DB_LOGIN', 'root');
-	define('DB_PASSWORD', '');
-	define('DB_NAME', 'ADS');
-	define('ABSPATH', dirname(dirname(__FILE__)));
+define ('DB_HOST', 'mysql.0hosting.me');
+define ('DB_LOGIN', 'u594068424_admin');
+define ('DB_PASSWORD', 'Test11');
+define ('DB_NAME', 'u594068424_ads');
+define ('ABSPATH', dirname(dirname(__FILE__)));

@@ -1,0 +1,16 @@
+		<script type="text/javascript"> 
+			$(function() {
+				var txt = $('#qwe').children('[value=' + $('#qwe').val() + ']').text();
+				$('#qwe').editableSelect();
+				$('#qwe').val(txt);
+				$('#qwe').change(function() {
+					var $option = $(this).siblings('select').children(':contains(' + $(this).val() + ')');
+					if ($option.length) {
+						$(this).siblings('select').children(':contains(' + $(this).val() + ')').attr('selected', 'selected');
+					} else {
+						$option = $('<option value="0" selected>' + $(this).val() + '</option>').appendTo($(this).siblings('select'));
+					}
+				});
+				
+			})
+		</script>

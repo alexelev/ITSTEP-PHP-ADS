@@ -1,4 +1,5 @@
 <?php
+include_once 'classes/application.php';
 
-	include 'includes/config.php';
-	include 'includes/init.php';
+Application::init('includes/config.php');
+echo Application::run();
